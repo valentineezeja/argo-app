@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: website-cm
+  labels:
+    app: argocdrocks
+data:
+  index.html: |
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <html lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8">
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+          <title>ArgoCD Rocks</title>
+          <style type="text/css">
+            body { text-align: center; margin: 80px 0px 0px 0px; font-family: 'Roboto', sans-serif; }
+            h1 { font-size: 6em; }
+          </style>
+      </head>
+      <body>
+        <div>
+          <img height="400px" src="https://branding.cncf.io/img/projects/argo/icon/color/argo-icon-color.svg"></svg>
+          <h1>ArgoCD Rocks !</h1>
+        </div>
+      </body>
+    </html>

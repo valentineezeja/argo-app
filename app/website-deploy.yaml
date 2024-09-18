@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-deployment
+  labels:
+    app: argocdrocks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocdrocks
+  template:
+    metadata:
+      labels:
+        app: argocdrocks
+    spec:
+      containers:
+      - name: argocdrocks-nginy
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: website-cm-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: website-cm-volume 
+        configMap:
+          name: website-cm
