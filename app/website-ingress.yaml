@@ -1,9 +1,9 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: website-ingress
   labels:
-    app: argocdrocks
+    app: argoapp
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
     traefik.ingress.kubernetes.io/rewrite-target: /
@@ -12,6 +12,10 @@ spec:
   - http:
       paths:
       - path: /app
+        pathType: Prefix
         backend:
-          serviceName: website-service
-          servicePort: 80
+        service:
+          name: website-service
+          port:
+            number: 80
+

@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: website-deployment
   labels:
-    app: argocdrocks
+    app: argoapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: argocdrocks
+      app: argoapp
   template:
     metadata:
       labels:
-        app: argocdrocks
+        app: argoapp
     spec:
       containers:
-      - name: argocdrocks-nginy
+      - name: argoapp-nginy
         image: nginx:alpine
         ports:
         - containerPort: 80
