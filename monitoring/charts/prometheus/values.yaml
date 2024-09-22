@@ -1,0 +1,14 @@
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelector: {}
+    podMonitorSelector: {}
+    ruleSelector: {}
+    serviceAccountName: "prometheus-sa"
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    serviceAccountName: "alertmanager-sa"
+
+grafana:
+  enabled: false # set up separately
