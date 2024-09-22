@@ -1,0 +1,8 @@
+apiVersion: v2
+name: grafana-stack
+description: A Helm chart for Grafana
+version: 0.1.0
+dependencies:
+  - name: grafana
+    version: 6.32.3  
+    repository: "https://grafana.github.io/helm-charts"
