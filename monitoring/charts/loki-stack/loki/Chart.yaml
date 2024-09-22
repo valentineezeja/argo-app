@@ -2,8 +2,8 @@ apiVersion: v2
 name: loki-stack
 description: A Helm chart for Loki
 version: 0.1.0
-appVersion: "3.1.1"
+appVersion: "2.6.1"  # Match the app version with Loki's version (v2.6.1)
 dependencies:
   - name: loki
-    version: 6.12.0
+    version: 2.10.0
     repository: "https://grafana.github.io/helm-charts"
