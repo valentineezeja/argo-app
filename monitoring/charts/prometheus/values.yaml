@@ -10,5 +10,10 @@ alertmanager:
   alertmanagerSpec:
     serviceAccountName: "alertmanager-sa"
 
+server:
+  service:
+    type: NodePort
+    nodePort: 32000
+
 grafana:
   enabled: false # set up separately
