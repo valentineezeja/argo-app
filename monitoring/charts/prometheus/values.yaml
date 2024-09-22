@@ -5,15 +5,15 @@ prometheus:
     ruleSelector: {}
     serviceAccountName: "prometheus-sa"
 
+  server:
+    service:
+      type: NodePort
+      nodePort: 32001
+
 alertmanager:
   enabled: true
   alertmanagerSpec:
     serviceAccountName: "alertmanager-sa"
-
-server:
-  service:
-    type: NodePort
-    nodePort: 32001
 
 grafana:
   enabled: false # set up separately
