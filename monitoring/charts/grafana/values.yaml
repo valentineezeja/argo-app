@@ -8,6 +8,9 @@ grafana:
       maxLines: 1000
   image:
     tag: latest
+  service:
+  type: NodePort
+  nodePort: 30000 
 
 
 
