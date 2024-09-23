@@ -10,7 +10,14 @@ This project demonstrates the setup of a full monitoring stack for a Kubernetes 
 3. **Grafana (v11.1.5)**: Provides dashboards and data visualizations, including a pre-configured Loki datasource for logs.
 4. **Prometheus (v2.54.1)**: Collects metrics from the Kubernetes cluster and visualizes them in Grafana.
 
-[Insert placeholder for demo video showing ArgoCD, Prometheus, and Grafana dashboards here]
+**Argo Dashboard:**
+
+<img width="842" alt="image" src="https://github.com/user-attachments/assets/3e5c66e3-439a-4e00-af53-80e188369278">
+
+> [!NOTE]
+> All apps are healthy as you can see, will fix the current sync issues and update this Readme😀
+
+
 
 ---
 
