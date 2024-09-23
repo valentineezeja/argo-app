@@ -1,19 +1,29 @@
 prometheus:
-  prometheusSpec:
-    serviceMonitorSelector: {}
-    podMonitorSelector: {}
-    ruleSelector: {}
-    serviceAccountName: "prometheus-sa"
+  enabled: false
+  isDefault: false
+  url: http://{{ include "prometheus.fullname" .}}:{{ .Values.prometheus.server.service.servicePort }}{{ .Values.prometheus.server.prefixURL }}
+  datasource:
+    jsonData: "{}"
 
-  server:
-    service:
-      type: NodePort
-      nodePort: 32001
 
-alertmanager:
-  enabled: true
-  alertmanagerSpec:
-    serviceAccountName: "alertmanager-sa"
 
-grafana:
-  enabled: false # set up separately
+
+# prometheus:
+#   prometheusSpec:
+#     serviceMonitorSelector: {}
+#     podMonitorSelector: {}
+#     ruleSelector: {}
+#     serviceAccountName: "prometheus-sa"
+
+#   server:
+#     service:
+#       type: NodePort
+#       nodePort: 32001
+
+# alertmanager:
+#   enabled: true
+#   alertmanagerSpec:
+#     serviceAccountName: "alertmanager-sa"
+
+# grafana:
+#   enabled: false # set up separately

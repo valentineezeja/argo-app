@@ -1,15 +1,30 @@
 grafana:
-  service:
-    type: NodePort
-    nodePort: 32000  
-  persistence:
-    enabled: true
-    size: 10Gi
-  datasources:
-    datasources.yaml:
-      apiVersion: 1
-      datasources:
-      - name: Loki
-        type: loki
-        access: proxy
-        url: http://loki.monitoring.svc.cluster.local:3100
+  enabled: true
+  sidecar:
+    datasources:
+      label: ""
+      labelValue: ""
+      enabled: true
+      maxLines: 1000
+  image:
+    tag: latest
+
+
+
+
+
+# grafana:
+#   service:
+#     type: NodePort
+#     nodePort: 32000  
+#   persistence:
+#     enabled: true
+#     size: 10Gi
+#   datasources:
+#     datasources.yaml:
+#       apiVersion: 1
+#       datasources:
+#       - name: Loki
+#         type: loki
+#         access: proxy
+#         url: http://loki.monitoring.svc.cluster.local:3100
