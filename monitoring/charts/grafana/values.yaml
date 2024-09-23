@@ -9,7 +9,7 @@ grafana:
   image:
     tag: latest
   service:
-    type: NodePort
+    type: NodePort        # Change service type to NodePort
     nodePort: 30000
 
 

@@ -16,8 +16,33 @@ loki:
     jsonData: "{}"
     uid: ""
   service:
-    type: NodePort        # Change service type to NodePort
-    nodePort: 31000       # Specify the NodePort for Loki (optional, can be auto-assigned)
+    type: NodePort
+    nodePort: 31000
 
-podSecurityPolicy:
-  enabled: false
+
+
+
+
+# loki:
+#   enabled: true
+#   isDefault: true
+#   url: http://{{(include "loki.serviceName" .)}}:{{ .Values.loki.service.port }}
+#   readinessProbe:
+#     httpGet:
+#       path: /ready
+#       port: http-metrics
+#     initialDelaySeconds: 45
+#   livenessProbe:
+#     httpGet:
+#       path: /ready
+#       port: http-metrics
+#     initialDelaySeconds: 45
+#   datasource:
+#     jsonData: "{}"
+#     uid: ""
+#   service:
+#     type: NodePort        # Change service type to NodePort
+#     nodePort: 31000       # Specify the NodePort for Loki (optional, can be auto-assigned)
+
+# podSecurityPolicy:
+#   enabled: false
